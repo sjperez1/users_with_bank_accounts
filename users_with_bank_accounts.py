@@ -24,10 +24,10 @@ class bank_account:
         if self.balance > 0:
             self.balance = self.balance + (self.balance * self.int_rate)
             return self
-    @classmethod
-    def all_bank_account_balances(cls):
-        for each_account in cls.all_bank_accounts:
-            print(f"Balance: ${each_account.balance}")
+    # @classmethod
+    # def all_bank_account_balances(cls):
+    #     for each_account in cls.all_bank_accounts:
+    #         print(f"Balance: ${each_account.balance}")
         # Chain methods of an instance (not a class), so nothing similar to return self is needed. In addition, the goal is just to print here.
 
 # account1 and account2 do not have a user attached to the accounts, so they are not really doing anything too significant now that we have users liked to bank account in class User. Therefore, we can get rid of (I'll comment them out) the bank accounts created, the related chains, and bank_account.all_bank_account_balances() since we will not have accounts to put in the list.
@@ -60,10 +60,10 @@ class User:
         return self
 
     # The following is for more practice. These are the following lines that correspond to this method: all_users = [ ], User.all_users.append(self), User.all_user_balances()
-    @classmethod
-    def all_user_balances(cls):
-        for each_user in cls.all_users.values(balance):
-            print(f"Balance: ${each_user.account.values(balance)}")
+    # @classmethod
+    # def all_user_balances(cls):
+    #     for each_user in cls.all_users.balance:
+    #         print(f"Balance: ${each_user.account.balance}")
 
 # line below: creating an instance of User called sarah.
 sarah = User("Sarah Perez", 45, 50)
