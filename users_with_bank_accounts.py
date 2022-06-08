@@ -83,6 +83,5 @@ sally.account["savings"].deposit(657).withdraw(97).withdraw(46).withdraw(22)
 sally.account["checking"].deposit(895).withdraw(88).withdraw(56).withdraw(65)
 sally.display_user_balance()
 
-bank_account.all_bank_account_balances()
 # User.all_user_balances()
 # inside of the user has a bank_account instance
