@@ -24,6 +24,7 @@ class bank_account:
         if self.balance > 0:
             self.balance = self.balance + (self.balance * self.int_rate)
             return self
+    # commenting out the following class method because it is not too necessary to have in this scenario, but there is a working one on the other file with one account per user.
     # @classmethod
     # def all_bank_account_balances(cls):
     #     for each_account in cls.all_bank_accounts:
@@ -38,6 +39,7 @@ class bank_account:
 # account1.deposit(433).deposit(153).deposit(48).withdraw(198).yield_interest().display_account_info()
 # account2.deposit(212).deposit(119).withdraw(13).withdraw(22).withdraw(29).withdraw(46).yield_interest().display_account_info()
 
+# the following corresponds to the classmethod that is commented out.
 # bank_account.all_bank_account_balances()
 
 
@@ -60,10 +62,13 @@ class User:
         return self
 
     # The following is for more practice. These are the following lines that correspond to this method: all_users = [ ], User.all_users.append(self), User.all_user_balances()
-    # @classmethod
-    # def all_user_balances(cls):
-    #     for each_user in cls.all_users.balance:
-    #         print(f"Balance: ${each_user.account.balance}")
+    @classmethod
+    def all_user_balances(cls):
+        for each_user in cls.all_users:
+            # .account is representing the whole dictionary
+            for key in each_user.account:
+                # each_user is representing an instance of user in our account dictionary and the key part is allowing us to access each key in the dictionary. The .balance part is allowing us to target that attribute of the bank account.
+                print(f"Balance of {key}: ${each_user.account[key].balance}")
 
 # line below: creating an instance of User called sarah.
 sarah = User("Sarah Perez", 45, 50)
@@ -83,5 +88,5 @@ sally.account["savings"].deposit(657).withdraw(97).withdraw(46).withdraw(22)
 sally.account["checking"].deposit(895).withdraw(88).withdraw(56).withdraw(65)
 sally.display_user_balance()
 
-# User.all_user_balances()
+User.all_user_balances()
 # inside of the user has a bank_account instance
